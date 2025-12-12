@@ -909,7 +909,7 @@ main {
 
 .team-photo {
     width: 100%;
-    max-width: 300px;
+    max-width: 900px;
     height: auto;
     margin: 2rem auto;
     display: block;
