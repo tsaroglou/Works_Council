@@ -44,6 +44,8 @@
                             <p class="blog-excerpt">We are pleased to announce that the Works Council has now been officially constituted.</p>
                         </div>
                         <div class="blog-card-content">
+                            <img src="images/works-council-team.jpg" alt="Works Council Members" class="blog-card-image">
+                            
                             <p>We are pleased to announce that the Works Council has now been officially constituted. The council elected <strong>Theodoros Saroglou</strong> as Chairperson and <strong>Julia Rippatha</strong> as Deputy Chairperson.</p>
                             
                             <p>During the inaugural meeting, the council discussed key topics related to the upcoming program and set priorities for the next steps. In the coming period, we will establish a two-way communication system to ensure transparent and effective exchange between the council and all employees.</p>
@@ -131,19 +133,17 @@
             const expandButtons = document.querySelectorAll('.expand-toggle');
             
             expandButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
                     const card = this.closest('.blog-card');
-                    const content = card.querySelector('.blog-card-content');
                     const isExpanded = card.classList.contains('expanded');
                     
                     if (isExpanded) {
                         card.classList.remove('expanded');
                         this.textContent = 'Read more';
-                        content.style.maxHeight = null;
                     } else {
                         card.classList.add('expanded');
                         this.textContent = 'Read less';
-                        content.style.maxHeight = content.scrollHeight + 'px';
                     }
                 });
             });
